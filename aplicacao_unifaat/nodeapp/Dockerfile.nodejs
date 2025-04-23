@@ -1,17 +1,19 @@
-# Dockerfile para Node.js
-FROM node:22
+FROM node:22-alpine
 
-# Criar diretório de trabalho
+# Define o diretório de trabalho dentro do container
 WORKDIR /app
 
-# Copiar arquivos da aplicação (se necessário)
-COPY . .
+# Copia os arquivos de dependências
+COPY package*.json ./
 
-# Instalar dependências
+# Instala as dependências
 RUN npm install
 
-# Expor a porta padrão da aplicação
-EXPOSE 3000
+# Copia o restante dos arquivos do projeto
+COPY . .
 
-# Comando padrão
-CMD ["npm", "start"]
+# Expõe a porta usada pela aplicação
+EXPOSE 3001
+
+# Comando para iniciar a aplicação
+CMD ["node", "index.js"]
