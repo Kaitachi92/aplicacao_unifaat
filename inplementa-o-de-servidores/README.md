@@ -12,6 +12,7 @@ Este repositório contém a implementação de servidores para diferentes propó
 
 - [Node.js](https://nodejs.org/) ou outra tecnologia necessária.
 - Dependências listadas no arquivo `package.json` (ou equivalente).
+- [Docker](https://www.docker.com/) e [Docker Compose](https://docs.docker.com/compose/).
 
 ## Como Executar
 
@@ -26,6 +27,10 @@ Este repositório contém a implementação de servidores para diferentes propó
 3. Inicie o servidor:
     ```bash
     npm start
+    ```
+4. Alternativamente, você pode usar o Docker Compose para subir o servidor:
+    ```bash
+    docker-compose up
     ```
 
 ## Contribuição
